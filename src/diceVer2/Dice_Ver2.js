@@ -5,6 +5,7 @@ function Dice_Ver2() {
   const [numberType, setNumberType] = useState(0);
   const [amountDice, setAmountDice] = useState(0);
   const [arrayResult, setArrayResult] = useState([]);
+  const [roll, setRoll] = useState("ROLL")
 
   const sideDice = useRef(0);
   const numberDice = useRef(0);
@@ -59,7 +60,8 @@ function Dice_Ver2() {
          </div>
           <br />
           <input
-            value="ROLL"
+           
+            value={roll}
             type="submit"
             className="dice__button theme-custom-1"
             onClick={handleRoll}
