@@ -1,0 +1,13 @@
+- Vẽ hướng đi cho project                                     15 phút
+  ----- Coding ---------------                                 
+- Dựng khung giao diện cơ bản cho project                     10 phút
+- Gán các giá trị (useRef, useState)                          10 phút 
+- Tính năng Lấy all giá trị nhập vào qua Submit               5 phút
+- Tính năng tạo thêm số xúc xắc tương ứng                     15 phút 
+- Tính năng tính tổng các số xúc xắc                          
+   + Tính tổng kết quả                                        15 phút
+   + Tạo thêm HTML cho số xúc xắc nhập vào                    10 phút
+   + Tạo thêm HTML hiển thị kết quả                           5 phút
+- Tạo thêm CSS cơ bản                                         10 phút 
+                                                            ------------
+                                                          1 tiếng 25 phút
