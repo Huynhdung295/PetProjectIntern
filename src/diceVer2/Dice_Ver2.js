@@ -68,10 +68,11 @@ function Dice_Ver2() {
       <div className="project-dice">
         <div className="dice__header">
           <h1 className="dice__title ">DICE - Cybersoft</h1>
+          <p>Need some dice? We got you</p>
         </div>
-        <form onSubmit={submit}>
+        <form className="form-group-dice" onSubmit={submit}>
         <div className="group-amount display-flex">
-        <p className="dice__side">Nhập số mặt xúc xắc</p>
+        <p className="dice__side">Chọn loại xúc xắc</p>
           {/* <input ref={sideDice} type="text" className="dice__input" /> */}
           <select className="dice__input" value={numberType} onChange={e => setNumberType(e.target.value)}>
             {Object.entries(typeDice).map(type => (
