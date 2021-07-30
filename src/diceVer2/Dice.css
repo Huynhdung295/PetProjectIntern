@@ -9,7 +9,11 @@
 	--fs-content: 2rem;
 	--fs-input: 1.6rem;
 	--fs-dice: 3rem;
-	--p-dice: 3px
+	--p-dice: 3px;
+	--h-group-dice: 200px;
+	--h-title-dice: 130px;
+	--h-input-dice: 50px;
+	--w-group-dice: 300px;
 }
 .display-flex{
 	display: flex;
@@ -42,7 +46,7 @@ body  {
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 130px;
+	height: var(--h-title-dice);
 }
 
 .dice__title {
@@ -51,20 +55,20 @@ body  {
 .dice__side,
 .dice__number {
 	font-size: var(--fs-content);
-	width: 300px;
+	width: var(--w-group-dice);
     display: flex;
 }
 .dice__input {
 	border: 5px solid black;
     width: 100px;
-    height: 50px;
+    height: var(--h-input-dice);
     text-align: center;
     color: black;
     font-size: var(--fs-input);
 }
 .dice__button {
-	height: 50px;
-	width: 200px;
+	height: var(--h-input-dice);
+	width: 150px;
 	font-size: var(--fs-content);
     cursor: pointer;
 	border-radius: 25px;
@@ -81,7 +85,7 @@ body  {
 	color: #000;
 }
 .form-group-dice{
-	height: 200px;
+	height: var(--h-group-dice);
 }
 .dicesum {
 	color: #D2A543;
@@ -106,20 +110,25 @@ body  {
     backdrop-filter: blur(60px);
   }
 
-  @media only screen and (max-width: 730px){
+  @media only screen and (max-width: 900px){
 	  :root{
-		--fs-title: 4rem;
-		--fs-content: 1.8rem;
+		--fs-title: 2.5rem;
+		--fs-content: 1.4rem;
 		--fs-input: 1.3rem;
-		--fs-dice: 3rem;
+		--fs-dice: 2rem;
+		--h-title-dice: 80px;
+		--h-group-dice: 140px;
+		--h-input-dice: 35px;
+		--p-dice: 10px;
 	  }
   }
   @media only screen and (max-width: 550px){
 	:root{
-	  --fs-title: 3rem;
+	  --fs-title: 2.2rem;
 	  --fs-content: 1.5rem;
 	  --fs-input: 1.4rem;
 	  --fs-dice: 2.2rem;
-	  --p-dice: 10px
+	  --p-dice: 10px;
+	  --w-group-dice: 240px;
 	}
 }
