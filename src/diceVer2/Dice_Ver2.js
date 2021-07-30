@@ -1,13 +1,23 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 
 import "./Dice.css";
 function Dice_Ver2() {
-  const [numberType, setNumberType] = useState(0);
+  const typeDice  = {
+    D4: 4,
+    D6: 6,
+    D8: 8,
+    D10: 10,
+    D12: 12,
+    D20: 20
+  }
+
+  const [numberType, setNumberType] = useState(typeDice.D4);
   const [amountDice, setAmountDice] = useState(0);
   const [arrayResult, setArrayResult] = useState([]);
   
+  
 
-  const sideDice = useRef(0);
+  // const sideDice = useRef(0);
   const numberDice = useRef(0);
   const resultDice = useRef(0);
   const sumDice = useRef(0)
@@ -18,7 +28,7 @@ function Dice_Ver2() {
 
   const submit = (e) => {
     e.preventDefault();
-    setNumberType(sideDice.current.value);
+    // setNumberType(sideDice.current.value);
     setAmountDice(numberDice.current.value);
     
   };
@@ -55,17 +65,22 @@ function Dice_Ver2() {
 
   return (
     <div>
-      <div>
-        <header className="dice__header">
-          <h1 className="dice__title theme-custom-1">DICE - Cybersoft</h1>
-        </header>
+      <div className="project-dice">
+        <div className="dice__header">
+          <h1 className="dice__title ">DICE - Cybersoft</h1>
+        </div>
         <form onSubmit={submit}>
-        <div className="group-amount theme-custom-1">
+        <div className="group-amount display-flex">
         <p className="dice__side">Nhập số mặt xúc xắc</p>
-          <input ref={sideDice} type="text" className="dice__input" />
+          {/* <input ref={sideDice} type="text" className="dice__input" /> */}
+          <select className="dice__input" value={numberType} onChange={e => setNumberType(e.target.value)}>
+            {Object.entries(typeDice).map(type => (
+              <option value={type[1]}>{type[0]}</option>
+            ))}
+          </select>
         </div>
           <br />
-         <div className="group-type theme-custom-1">
+         <div className="group-type display-flex">
          <p className="dice__number">Nhập số xúc xắc</p>
           <input ref={numberDice} type="text" className="dice__input" />
          </div>
@@ -73,7 +88,7 @@ function Dice_Ver2() {
           <input
             value="ROLL"
             type="submit"
-            className="dice__button theme-custom-1 "
+            className="dice__button "
             onClick={handleRoll}
           />
         </form>
