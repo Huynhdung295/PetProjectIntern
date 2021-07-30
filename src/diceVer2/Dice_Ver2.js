@@ -28,9 +28,7 @@ function Dice_Ver2() {
 
   const submit = (e) => {
     e.preventDefault();
-    // setNumberType(sideDice.current.value);
-    setAmountDice(numberDice.current.value);
-    
+
   };
 
   function createArrayOfDice() {
@@ -83,7 +81,7 @@ function Dice_Ver2() {
           <br />
          <div className="group-type display-flex">
          <p className="dice__number">Nhập số xúc xắc</p>
-          <input ref={numberDice} type="text" className="dice__input" />
+          <input onChange={e => setAmountDice(e.target.value)} ref={numberDice} type="text" className="dice__input" />
          </div>
           <br />
           <input
