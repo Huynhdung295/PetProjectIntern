@@ -1,134 +1,183 @@
-
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-:root{
-	--fs-title: 4.5rem;
-	--fs-content: 2rem;
-	--fs-input: 1.6rem;
-	--fs-dice: 3rem;
-	--p-dice: 3px;
-	--h-group-dice: 200px;
-	--h-title-dice: 130px;
-	--h-input-dice: 50px;
-	--w-group-dice: 300px;
+body {
+  background: linear-gradient(45deg, #fc466b, #3f5efb);
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
-.display-flex{
-	display: flex;
-	justify-content: center;
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
-p {
-	color: rgb(232 224 122);
+.project-dice {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 3em;
+  height: auto;
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgb(0 0 0 / 20%);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
 }
-body  {
-	/* background-image: url("./background.png"); */
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 1000% 1000%;
-	animation: gradient 10s ease infinite;
-	text-align: center;
+.wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+  width: 555px;
 }
-@keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-      }
-    50% {
-      background-position: 100% 50%;
-      }
-    100% {
-      background-position: 0% 50%;
-      }
+.dice-title {
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.dice-form {
+  background: transparent;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 0;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5000px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.dice-form :hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 
-.dice__header {
-	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: var(--h-title-dice);
+.dice-content {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  text-align: left;
 }
-
-.dice__title {
-	font-size: var(--fs-title);
+.dice-option {
+  color: #000;
 }
-.dice__side,
-.dice__number {
-	font-size: var(--fs-content);
-	width: var(--w-group-dice);
-    display: flex;
-}
-.dice__input {
-	border: 5px solid black;
-    width: 100px;
-    height: var(--h-input-dice);
-    text-align: center;
-    color: black;
-    font-size: var(--fs-input);
-}
-.dice__button {
-	height: var(--h-input-dice);
-	width: 150px;
-	font-size: var(--fs-content);
-    cursor: pointer;
-	border-radius: 25px;
+.dice-button {
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-right: 15px;
 }
 .dice__roll {
-	font-size: var(--fs-dice);
-	display: inline-block;
-	width: 70px;
-    height: 70px;
-    margin: 10px 10px 10px;
-    padding: var(--p-dice);
-	border: 5px solid #000;
-	background-color: #fff;
-	color: #000;
+  background: transparent;
+  width: 70px;
+  height: 70px;
+  padding: 15px;
+  margin-right: 15px;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgb(0 0 0 / 20%);
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 }
-.form-group-dice{
-	height: var(--h-group-dice);
+.dice-result {
+  display: flex;
+  justify-content: center;
 }
+
 .dicesum {
-	color: #D2A543;
-	font-size: var(--fs-title);
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 4rem;
+  margin-top: 30px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 }
 
-.menu {
-	color:rgb(232 224 122);
+.project-dice:hover {
+  margin: 4px;
 }
-.dice__title {
-	color: rgb(232 224 122);
-	outline-color: black;
+.drop {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: all 0.2s ease;
 }
-
-
-.theme-custom-1 {
-    background-color: rgb(0 0 0 / 0%);
-    border: 1px solid rgb(0 0 0 / 0%);
-    box-shadow: rgb(142 142 142 / 19%) 3px 7px 8px 6px;
-    border-radius: 25px;
-    color: rgb(232 224 122);
-    backdrop-filter: blur(60px);
+.drop-1 {
+  height: 80px;
+  width: 80px;
+  top: -20px;
+  left: -40px;
+  z-index: -1;
+}
+.drop-2 {
+  height: 80px;
+  width: 80px;
+  bottom: -30px;
+  right: -10px;
+}
+.drop-3 {
+  height: 100px;
+  width: 100px;
+  bottom: 120px;
+  right: -50px;
+  z-index: -1;
+}
+.drop-4 {
+  height: 120px;
+  width: 120px;
+  top: -60px;
+  right: -60px;
+}
+.drop-5 {
+  height: 60px;
+  width: 60px;
+  bottom: 170px;
+  left: 90px;
+  z-index: -1;
+}
+@media only screen and (max-width: 575px) {
+  body {
+    overflow: hidden;
   }
-
-  @media only screen and (max-width: 900px){
-	  :root{
-		--fs-title: 2.5rem;
-		--fs-content: 1.4rem;
-		--fs-input: 1.3rem;
-		--fs-dice: 2rem;
-		--h-title-dice: 80px;
-		--h-group-dice: 140px;
-		--h-input-dice: 35px;
-		--p-dice: 10px;
-	  }
+  .wrapper {
+    width: 85%;
+	top: 50%;
   }
-  @media only screen and (max-width: 550px){
-	:root{
-	  --fs-title: 2.2rem;
-	  --fs-content: 1.5rem;
-	  --fs-input: 1.4rem;
-	  --fs-dice: 2.2rem;
-	  --p-dice: 10px;
-	  --w-group-dice: 240px;
-	}
+  .dice-result {
+    display: none;
+  }
+  .dice-button {
+    margin-bottom: 0;
+  }
+  .dice-title {
+    font-size: 1.7rem;
+  }
+  .dice-content {
+    font-size: 1.2rem;
+  }
 }
