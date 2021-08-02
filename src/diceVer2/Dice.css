@@ -3,10 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
 body {
   background: linear-gradient(45deg, #fc466b, #3f5efb);
-  height: 100vh;
+  /* height: 100vh; */
   font-family: "Montserrat", sans-serif;
+  min-height: 100%;
+  overflow: hidden
 }
 a,
 input:focus,
@@ -19,7 +24,7 @@ button:focus {
 .project-dice {
   background: rgba(255, 255, 255, 0.3);
   padding: 3em;
-  height: auto;
+  height: 615px;
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -53,7 +58,7 @@ button:focus {
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5000px;
+  border-radius: 10px;
   backdrop-filter: blur(5px);
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
   color: #fff;
@@ -61,8 +66,9 @@ button:focus {
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-right: 15px solid rgba(255, 255, 2555, 0);
 }
-.dice-form :hover {
+.dice-form:hover {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
@@ -75,6 +81,7 @@ button:focus {
 .dice-option {
   color: #000;
 }
+
 .dice-button {
   width: 200px;
   margin-top: 15px;
@@ -87,6 +94,7 @@ button:focus {
   height: 70px;
   padding: 15px;
   margin-right: 15px;
+  margin-bottom: 15px;
   border: none;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -101,22 +109,22 @@ button:focus {
   text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 }
 .dice-result {
-  display: flex;
-  justify-content: center;
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto ;
 }
 
-.dicesum {
+/* .dicesum {
   font-weight: bold;
   color: #fff;
   opacity: 0.7;
   font-size: 4rem;
   margin-top: 30px;
   text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
-}
+} */
 
-.project-dice:hover {
+/* .project-dice:hover {
   margin: 4px;
-}
+} */
 .drop {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
@@ -161,16 +169,16 @@ button:focus {
   z-index: -1;
 }
 @media only screen and (max-width: 575px) {
-  body {
-    overflow: hidden;
+  body::-webkit-scrollbar {
+    display: none;
   }
   .wrapper {
     width: 85%;
-	top: 50%;
+    top: 50%;
   }
-  .dice-result {
+  /* .dice-result {
     display: none;
-  }
+  } */
   .dice-button {
     margin-bottom: 0;
   }
@@ -180,4 +188,34 @@ button:focus {
   .dice-content {
     font-size: 1.2rem;
   }
+  .project-dice{
+    padding: 1.5em;
+    height: 558px;
+  }
+
+  .dice__roll {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 7px;
+  }
+  .drop-2{
+    width: 60px;
+    height:60px;
+    bottom: -25px;
+    right: -25px;
+  }
+  .drop-1{
+    left: -18px;
+  }
+  .drop-3{
+    right: -20px;
+  }
+  .drop-4 {
+    height: 90px;
+    width: 90px;
+    top: -65px;
+    right: -21px;
+}
 }
