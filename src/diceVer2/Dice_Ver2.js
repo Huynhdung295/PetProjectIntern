@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 
+
 import "./Dice.css";
 function Dice_Ver2() {
   const typeDice = {
@@ -145,10 +146,8 @@ function Dice_Ver2() {
           {/* <p ref={sumDice} /> */}
         </div>
         <div className="drops">
-          <div className="drop drop-1" />
           <div className="drop drop-2" />
           <div className="drop drop-3" />
-          <div className="drop drop-4" />
           <div className="drop drop-5" />
         </div>
       </div>

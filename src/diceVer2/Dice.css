@@ -200,22 +200,7 @@ button:focus {
     margin-bottom: 0;
     padding: 7px;
   }
-  .drop-2{
-    width: 60px;
-    height:60px;
-    bottom: -25px;
-    right: -25px;
+  .drop{
+    display: none;
   }
-  .drop-1{
-    left: -18px;
-  }
-  .drop-3{
-    right: -20px;
-  }
-  .drop-4 {
-    height: 90px;
-    width: 90px;
-    top: -65px;
-    right: -21px;
-}
 }
